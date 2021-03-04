@@ -7,11 +7,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/MRU BCIS INFO/WINTER 2021/COMP 3505 - 001 Software Testing/Assignment_3/JFreeChart v2.0/JFreeChart/lib/gnujaxp.jar"/>
-	<classpathentry kind="lib" path="D:/MRU BCIS INFO/WINTER 2021/COMP 3505 - 001 Software Testing/Assignment_3/JFreeChart v2.0/JFreeChart/lib/jcommon-1.0.0-rc1-cvs.jar"/>
-	<classpathentry kind="lib" path="D:/MRU BCIS INFO/WINTER 2021/COMP 3505 - 001 Software Testing/Assignment_3/JFreeChart v2.0/JFreeChart/lib/jcommon-1.0.5.jar"/>
-	<classpathentry kind="lib" path="D:/MRU BCIS INFO/WINTER 2021/COMP 3505 - 001 Software Testing/Assignment_3/JFreeChart v2.0/JFreeChart/lib/mockito-all-2.0.2-beta.jar"/>
-	<classpathentry kind="lib" path="D:/MRU BCIS INFO/WINTER 2021/COMP 3505 - 001 Software Testing/Assignment_3/JFreeChart v2.0/JFreeChart/lib/servlet.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/gnujaxp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/jcommon-1.0.0-rc1-cvs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/jcommon-1.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/servlet.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
