@@ -20,7 +20,7 @@ jobs:
           echo Starting the tests:
           mkdir lib
           mkdir bin
-          crul https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -o lib/servlet.jar
+          curl https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -o lib/servlet.jar
           curl https://repo1.maven.org/maven2/jfree/jcommon/1.0.5/jcommon-1.0.5.jar -o lib/jcommon-1.0.5.jar
           curl https://clojars.org/repo/incanter/gnujaxp/1/gnujaxp-1.jar -o lib/gnujaxp.jar
           curl https://repo1.maven.org/maven2/org/mockito/mockito-all/2.0.2-beta/mockito-all-2.0.2-beta.jar -o lib/mockito-all-2.0.2-beta.jar
