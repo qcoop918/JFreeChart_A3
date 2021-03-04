@@ -8,10 +8,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/gnujaxp.jar"/>
-	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/jcommon-1.0.0-rc1-cvs.jar"/>
-	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/jcommon-1.0.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/mockito-all-2.0.2-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/quinn/Documents/GitHub/JFreeChart_A3/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="lib/servlet.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.0-rc1-cvs.jar"/>
+	<classpathentry kind="lib" path="lib/gnujaxp.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/mockito-all-2.0.2-beta.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
