@@ -25,6 +25,6 @@ jobs:
           curl https://repo1.maven.org/maven2/org/mockito/mockito-all/2.0.2-beta/mockito-all-2.0.2-beta.jar -o lib/mockito-all-2.0.2-beta.jar
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.5.2/junit-platform-console-standalone-1.5.2.jar -o lib/junit-platform-console-standalone-1.5.2.jar
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.5.2.jar:lib/mockito-all-2.0.2-beta.jar:lib/gnujaxp.jar:lib/jcommon-1.0.5.jar:lib/servlet.jar $(find src/ -name "*.java")
-          javac -d bin -cp bin:lib/junit-platform-console-standalone-1.5.2.jar:lib/mockito-all-2.0.2-beta.jar test/org/jfree/data/*
+          javac -d bin -cp bin:lib/mockito-all-2.0.2-beta.jar:lib/junit-platform-console-standalone-1.5.2.jar: test/org/jfree/data/*
           java -jar lib/junit-platform-console-standalone-1.5.2.jar --class-path bin --scan-class-path
           java -jar lib/mockito-all-2.0.2-beta.jar --class-path bin --scan-class-path
