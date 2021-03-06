@@ -22,7 +22,7 @@ jobs:
           mkdir bin
           curl https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -o lib/servlet.jar
           curl https://repo1.maven.org/maven2/jfree/jcommon/1.0.5/jcommon-1.0.5.jar -o lib/jcommon-1.0.5.jar
-          curl https://repo1.maven.org/maven2/org/mockito/mockito-core/3.8.0/mockito-core-3.8.0.jar -o lib/mockito-all-2.0.2-beta.jar
+          curl https://repo1.maven.org/maven2/org/mockito/mockito-all/2.0.2-beta/mockito-all-2.0.2-beta.jar -o lib/mockito-all-2.0.2-beta.jar
           curl https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.5.2/junit-platform-console-standalone-1.5.2.jar -o lib/junit-platform-console-standalone-1.5.2.jar
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.5.2.jar:lib/mockito-all-2.0.2-beta.jar:lib/gnujaxp.jar:lib/jcommon-1.0.5.jar:lib/servlet.jar $(find src/ -name "*.java")
           javac -d bin -cp bin:lib/junit-platform-console-standalone-1.5.2.jar:lib/mockito-all-2.0.2-beta.jar:lib/gnujaxp.jar:lib/jcommon-1.0.5.jar:lib/servlet.jar test/org/jfree/data/*
