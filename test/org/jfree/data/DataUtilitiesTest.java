@@ -26,28 +26,32 @@ class DataUtilitiesTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		value = mock(Values2D.class); // all test cases will use this mocked value variable with changed values.
-		when(value.getColumnCount()).thenReturn(4); // 3x4 whatever you want
-		when(value.getRowCount()).thenReturn(3);
+		when(value.getColumnCount()).thenReturn(5); // 3x4 whatever you want
+		when(value.getRowCount()).thenReturn(4);
 		kvalues = mock(KeyedValues.class);
 
-		when(kvalues.getItemCount()).thenReturn(3);
+		when(kvalues.getItemCount()).thenReturn(4);
 
 		when(kvalues.getValue(0)).thenReturn(-4);
 		when(kvalues.getValue(1)).thenReturn(6);
 		when(kvalues.getValue(2)).thenReturn(12);
+		when(kvalues.getValue(3)).thenReturn(null);
 
 		when(kvalues.getKey(0)).thenReturn(0);
 		when(kvalues.getKey(1)).thenReturn(1);
 		when(kvalues.getKey(2)).thenReturn(2);
+		when(kvalues.getKey(3)).thenReturn(3);
 
 		when(kvalues.getIndex(0)).thenReturn(0);
 		when(kvalues.getIndex(1)).thenReturn(1);
 		when(kvalues.getIndex(2)).thenReturn(2);
+		when(kvalues.getIndex(3)).thenReturn(3);
 
 		ArrayList keyList = new ArrayList<>();
 		keyList.add(0);
 		keyList.add(1);
 		keyList.add(2);
+		keyList.add(3);
 
 		when(kvalues.getKeys()).thenReturn(keyList);
 	}
@@ -253,9 +257,9 @@ class DataUtilitiesTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource({ "-0.33, 0", // Testing negative number
-			"0.5, 1", // Testing regular number
-			"1.0, 2" // Testing regular number
+	@CsvSource({ "-0.28, 0", // Testing negative number
+			"0.42, 1", // Testing regular number
+			"0.85, 2" // Testing regular number
 	})
 	void getCumulativePercentageTest(double expected, int a) {
 		KeyedValues actual = DataUtilities.getCumulativePercentages(kvalues);
