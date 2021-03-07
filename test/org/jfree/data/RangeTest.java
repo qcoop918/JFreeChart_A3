@@ -739,7 +739,7 @@ class RangeTest {
 	@ParameterizedTest
 	@CsvSource({ "true, -3, 11, -10, -3, Ranges intersect at -3", // Testing when ranges intersect at 1 point
 			"false, 11, 15, 0, 10, Ranges don't intersect", // Testing when ranges don't intersect
-			"true, 6, 9, -12, 6, Ranges intersect at 6", // Testing when ranges intersect via many points
+			"true, 4, 9, -12, 6, Ranges intersect at 4, 5, 6", // Testing when ranges intersect via many points
 			"true, 6, 9, -12, 20, Range 1 is inside of range 2", // Testing when 1 range belongs to another range
 			"true, 0, 0, 0, 0, Both ranges are the same" // Testing when ranges are the same
 	})
