@@ -36,7 +36,7 @@ class RangeTest {
 		expected = new Range(3, 13);
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Combining (3,5) with (7,13) should result in (3,13)");
 	}
 
 	// Testing combine method with 2 Ranges that are positive but overlaps with each
@@ -50,7 +50,7 @@ class RangeTest {
 		expected = new Range(3, 13);
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Combining (3,5) with (4,13) should result in (3,13)");
 	}
 
 	// Testing combine method with 2 Ranges that are positive but overlaps with each
@@ -64,7 +64,7 @@ class RangeTest {
 		expected = new Range(1, 15);
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Combining (3,15) with (1,7) should result in (1,15)");
 	}
 
 	// Testing combine method with 2 Ranges that are positive but overlaps with each
@@ -78,7 +78,7 @@ class RangeTest {
 		expected = new Range(3, 15);
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Combining (3,15) with (4,6) should result in (3,15)");
 	}
 
 	// Testing combine method with 2 Ranges that are positive but overlaps with each
@@ -92,7 +92,7 @@ class RangeTest {
 		expected = new Range(3, 12);
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Combining (7,12) with (3,8) should result in (3,12)");
 	}
 
 	// Testing combine method with 2 Similarly Valued Ranges.
@@ -105,7 +105,7 @@ class RangeTest {
 		expected = new Range(3, 5);
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Combining (3,5) with (3,5) should result in (3,5)");
 	}
 
 	// Possible Test Case -- Invalid
@@ -124,7 +124,7 @@ class RangeTest {
 		expected = null;
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 
-		assertAll(() -> assertEquals(expected, actual), () -> assertNull(actual));
+		assertAll(() -> assertEquals(expected, actual, "Combining (null) with (null) should result in (null)"), () -> assertNull(actual));
 	}
 
 	// Testing combine method with 1 Range that is of null value and the other an
@@ -140,7 +140,8 @@ class RangeTest {
 		Range actual = Range.combine(exampleRange1, exampleRange2);
 		Range actual2 = Range.combine(exampleRange2, exampleRange1);
 
-		assertAll(() -> assertEquals(expected, actual), () -> assertEquals(expected, actual2));
+		assertAll(() -> assertEquals(expected, actual, "Combining (3,5) with (null) should result in (3,5)"), 
+				() -> assertEquals(expected, actual2, "Combining (null) with (3,5) should result in (3,5)"));
 	}
 
 	/* SHIFT METHOD (2 parameters) TEST CASES */
@@ -170,7 +171,7 @@ class RangeTest {
 		expected = new Range(4, 8);
 		Range actual = Range.shift(exampleRange1, 2);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Range should be shifted to (4,8)");
 	}
 
 	// Testing shift method with 1 Positive Range that is shifted by a negative
@@ -184,7 +185,7 @@ class RangeTest {
 		expected = new Range(0, 5);
 		Range actual = Range.shift(exampleRange1, -5);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Range should be shifted to (0,5)");
 	}
 
 	// Testing shift method with 1 Positive Range that is shifted by a negative
@@ -201,7 +202,7 @@ class RangeTest {
 		expected = new Range(0, 0);
 		Range actual = Range.shift(exampleRange1, -3);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Range should be shifted to (0,0)");
 	}
 
 	// Testing shift method with 1 Negative Range that is shifted by a negative
@@ -215,7 +216,7 @@ class RangeTest {
 		expected = new Range(-11, -9);
 		Range actual = Range.shift(exampleRange1, -6);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Range should be shifted to (-11,-9)");
 	}
 
 	// Testing shift method with 1 Negative Range that is shifted by a positive
@@ -232,7 +233,7 @@ class RangeTest {
 		expected = new Range(0, 0);
 		Range actual = Range.shift(exampleRange1, 5);
 
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Range should be shifted to (0,0)");
 	}
 
 	/* CONSTRAIN METHOD TEST CASES */
@@ -248,7 +249,7 @@ class RangeTest {
 		expectedValue = 13;
 		double actual = exampleRange1.constrain(13);
 
-		assertEquals(expectedValue, actual);
+		assertEquals(expectedValue, actual, "constrained result should be 13");
 	}
 
 	// Testing constrain method with 1 Positive Range using constrain on a value
@@ -262,7 +263,7 @@ class RangeTest {
 		expectedValue = 15;
 		double actual = exampleRange1.constrain(18);
 
-		assertEquals(expectedValue, actual);
+		assertEquals(expectedValue, actual, "constrained result should be 15");
 	}
 
 	// Testing constrain method with 1 Positive Range using constrain on a value
@@ -276,7 +277,7 @@ class RangeTest {
 		expectedValue = 10;
 		double actual = exampleRange1.constrain(7);
 
-		assertEquals(expectedValue, actual);
+		assertEquals(expectedValue, actual, "constrained result should be 10");
 	}
 
 	// Testing constrain method with 1 Positive Range using constrain on a values
@@ -293,7 +294,8 @@ class RangeTest {
 		double actual = exampleRange1.constrain(10);
 		double actual2 = exampleRange1.constrain(15);
 
-		assertAll(() -> assertEquals(expectedValue, actual), () -> assertEquals(expectedValue2, actual2));
+		assertAll(() -> assertEquals(expectedValue, actual, "constrained result should be 10"), 
+				() -> assertEquals(expectedValue2, actual2, "constrained result should be 15"));
 	}
 
 	// Testing constrain method with 1 Negative Range using constrain on a value
@@ -307,7 +309,7 @@ class RangeTest {
 		expectedValue = -5;
 		double actual = exampleRange1.constrain(-5);
 
-		assertEquals(expectedValue, actual);
+		assertEquals(expectedValue, actual, "constrained result should be -5");
 	}
 
 	// Testing constrain method with 1 Negative Range using constrain on a value
@@ -321,7 +323,7 @@ class RangeTest {
 		expectedValue = -4;
 		double actual = exampleRange1.constrain(-2);
 
-		assertEquals(expectedValue, actual);
+		assertEquals(expectedValue, actual, "constrained result should be -4");
 	}
 
 	// Testing constrain method with 1 Negative Range using constrain on a value
@@ -335,7 +337,7 @@ class RangeTest {
 		expectedValue = -8;
 		double actual = exampleRange1.constrain(-20);
 
-		assertEquals(expectedValue, actual);
+		assertEquals(expectedValue, actual, "constrained result should be -8");
 	}
 
 	// Testing constrain method with 1 Negative Range using constrain on a values
@@ -352,7 +354,8 @@ class RangeTest {
 		double actual = exampleRange1.constrain(-8);
 		double actual2 = exampleRange1.constrain(-4);
 
-		assertAll(() -> assertEquals(expectedValue, actual), () -> assertEquals(expectedValue2, actual2));
+		assertAll(() -> assertEquals(expectedValue, actual, "constrained result should be -8"), 
+				() -> assertEquals(expectedValue2, actual2, "constrained result should be -4"));
 	}
 
 	/* CONTAINS METHOD TEST CASES */
